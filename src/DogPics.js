@@ -13,17 +13,31 @@ function DogPics() {
         console.log("setState");
         setImages(data.message);
       });
-  });
+  }, []);
 
   console.log("render");
 
   return (
-    <div>
+    <div style={{ 
+      display: "flex", 
+      flexDirection: "column", 
+      alignItems: "center", 
+      marginTop: "10px"
+      }}
+      >
       {images.map((image) => (
-        <img src={image} key={image} />
+        <img 
+        src={image} key={image} 
+        alt="Random Dog" 
+        style={{
+          display: "block",
+          width: "50vw",
+          marginTop: "20px"
+         }}
+         />
       ))}
     </div>
-  );
+  )
 }
 
 export default DogPics;
